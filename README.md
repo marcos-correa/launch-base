@@ -1,13 +1,9 @@
 <h1 align="center">
-    <img alt="Launchbase" src="./images/launchbaseRD.png" width="400px" />
+    <img alt="Launchbase" src="images/launchbaseRD.png" width="400px" />
 </h1>
 
-<h3 align="center">
-  Desafio 1-2: Lidando com objetos e vetores
-</h3>
-
-<blockquote align="center">“Não basta saber, é preferível saber aplicar. Não é o bastante querer, é preciso saber querer.”</blockquote>
-
+<h2>Under construction</h2>
+<!--
 <p align="center">
 
   <a href="https://rocketseat.com.br">
@@ -106,4 +102,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para
 
 ---
 
-Feito com :purple_heart: by [Rocketseat](https://rocketseat.com.br) :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc)
+Feito com :purple_heart: by [Rocketseat](https://rocketseat.com.br) :wave: [Entre na nossa comunidade!](https://discordapp.com/invite/gCRAFhc) -->
