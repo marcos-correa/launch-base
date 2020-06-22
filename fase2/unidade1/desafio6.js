@@ -1,15 +1,15 @@
 const technologies = [
     { 
         name: 'C++', 
-        especialidade: 'Desktop' 
+        camp: 'Desktop' 
     },
     { 
         name: 'Python', 
-        especialidade: 'Data Science' 
+        camp: 'Data Science' 
     },
     { 
         name: 'JavaScript', 
-        especialidade: 'Web/Mobile' 
+        camp: 'Web/Mobile' 
     }
 ]
 
@@ -34,55 +34,43 @@ const coders = [
 // console.log(coders[0].technologies.length)
 // console.log(coders[0].technologies[0].name)
 
-function showCoders(){
-    let resumeCoders = []
+function coderWorkTo(onetech){
+    for(let coder of coders){
+        const objTecnologias = checkTechnologies(coder, onetech)
 
-    for(i=0;i<coders.length;i++){
-        let name = (`${coders[i].name}`)
-        let tech = []
-        for (j=0;j<coders[i].technologies.length;j++){
-            tech[j] = " "+ coders[i].technologies[j].name
-        }
-
-        resumeCoders[i]= `${name} trabalha com:${tech}`
-    }
-    return resumeCoders
-}
-
-const resumeCoders = showCoders()
-// console.log(resumeCoders)
-
-
-function showTechCoders(){
-    let resumeTechCoders = []
-
-    for(i=0;i<coders.length;i++){
-        let name = coders[i].name
-        let tech = []
-
-        for (j=0;j<coders[i].technologies.length;j++){
-            tech[j] = coders[i].technologies[j].name
-        }
-
-        resumeTechCoders[i]=[name].concat(tech)
-    }
-    return resumeTechCoders
-}
-
-
-const resumeTechCoders = showTechCoders()
-
-function searchTechCoders(language){
-    for(i=0;i<resumeTechCoders.length;i++){
-        if(resumeTechCoders[i].indexOf(language) != -1 ){ 
-            console.log(`${resumeTechCoders[i][0]} trabalha com ${language}`)
-        }else{  
+        if(objTecnologias[0]){
+            console.log(`O dev ${coder.name} trabalha com`,onetech,`em ${objTecnologias[1]} `)
         }
     }
 }
 
+function checkTechnologies(coder, tech ){
+    for(technology of coder.technologies){
+        if(technology.name ===tech){
+            return [true,technology.camp]
+        }
+    }
+return false
+}
 
-const selectLanguage = 'JavaScript'
-const searchCoder = searchTechCoders(selectLanguage)
+coderWorkTo('JavaScript')
+coderCamp('Desktop')
 
+function coderCamp(onecamp){
+    for(let coder of coders){
+        const objTecnologias = checkCamp(coder, onecamp)
 
+        if(objTecnologias[0]){
+            console.log(`O dev ${coder.name} trabalha na área de`,onecamp,`com ${objTecnologias[1]} `)
+        }
+    }
+}
+
+function checkCamp(coder, camp ){
+    for(technology of coder.technologies){
+        if(technology.camp ===camp){
+            return [true,technology.name]
+        }
+    }
+return false
+}
