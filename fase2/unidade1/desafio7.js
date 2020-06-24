@@ -20,17 +20,19 @@ const usuarios = [
 
 
 for (usuario of usuarios){
-    let receita = somarValores()
-    let despesas = somarValores2()
-    let saldo = ''
-    saldo = calculaSaldo(saldo, receita, despesas);
+    // let receita = somarValores(usuario.receitas)
+    //esstudar o reduce
+    let receita = usuario.receitas.reduce((total, number)=> total + number, 0)
+    let despesas = usuario.despesas.reduce((total, number)=> total + number, 0)
+    // let despesas = somarValores(usuario.despesas)
+    let saldo = calculaSaldo(receita, despesas);
     let saldoAtual = statusSaldo(saldo)
 
     console.log(`o usuário ${usuario.nome} tem um saldo ${saldoAtual} de ${saldo}`)
 }
 
-function calculaSaldo(saldo, receita, despesas) {
-        saldo = (receita - despesas).toFixed(2);
+function calculaSaldo(receita, despesas) {
+        let saldo = (receita - despesas).toFixed(2);
         return saldo;
 }
 
@@ -46,18 +48,10 @@ function statusSaldo(saldo) {
     return statusSaldo;
 }
 
-function somarValores(){
-    let atualReceita = 0
-    for(i=0;i<usuario.receitas.length;i++){
-        atualReceita += usuario.receitas[i]
+function somarValores(valor){
+    let valorSomado = 0
+    for(i=0;i<valor.length;i++){
+        valorSomado += valor[i]
     }
-    return atualReceita.toFixed(2)
-}
-
-function somarValores2(){
-    let atualDespesas = 0
-    for(i=0;i<usuario.despesas.length;i++){
-        atualDespesas += usuario.despesas[i]
-    }
-    return atualDespesas.toFixed(2)
+    return valorSomado
 }
